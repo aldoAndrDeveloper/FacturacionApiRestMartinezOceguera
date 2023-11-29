@@ -1,13 +1,17 @@
+-----------------------------------------
 Usarios
-
+-----------------------------------------
 Hay 2 tipos de usuarios, vendedor y comprador
+-----------------------------------------
 Crear usuario:
-POST
+-----------------------------------------
+POST (Body)
+-----------------------------------------
 localhost:8080/api/usuarios/guardar
 
----------------------------------
+-----------------------------------------
 JSON Para crear vendedor
----------------------------------
+-----------------------------------------
 {
     "id":0,
     "nombre":"Pancho",
@@ -42,3 +46,24 @@ JSON para crear un comprador
         "idComprador":0  //aquí el id se genera en automático así que no hay problema el numero que se mande
     }
 }
+
+-----------------------------------------
+Ver usuario:
+-----------------------------------------
+GET
+-----------------------------------------
+localhost:8080/api/usuarios/todos
+-----------------------------------------
+Buscar usuario por id
+-----------------------------------------
+GET
+-----------------------------------------
+localhost:8080/api/usuarios/buscar/1 //el 1 representa el id de algún usuario
+-----------------------------------------
+Borrar usuario por id
+-----------------------------------------
+DELETE
+-----------------------------------------
+localhost:8080/api/usuarios/borrar/1 //el número es el id del usuario que va a borrar
+
+
