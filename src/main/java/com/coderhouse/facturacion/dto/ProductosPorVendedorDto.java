@@ -3,7 +3,6 @@ package com.coderhouse.facturacion.dto;
 import com.coderhouse.facturacion.model.Productos;
 import com.coderhouse.facturacion.model.ProductosPorVendedor;
 import com.coderhouse.facturacion.model.Vendedor;
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,14 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ProductosPorVendedorDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_producto_cliente;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(referencedColumnName = "idProducto",nullable = true)
     private Productos productos;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(referencedColumnName = "idVendedor",nullable = true)
     private Vendedor vendedor;
 
     public ProductosPorVendedorDto(ProductosPorVendedor productosPorVendedor) {

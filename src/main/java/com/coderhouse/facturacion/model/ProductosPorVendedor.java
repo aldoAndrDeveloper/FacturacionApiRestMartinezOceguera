@@ -10,10 +10,17 @@ import lombok.NoArgsConstructor;
 @Data
 @Table(name = "producto_por_vendedor")
 public class ProductosPorVendedor {
+
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_producto_cliente;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(referencedColumnName = "idProducto")
     private Productos productos;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(referencedColumnName = "idVendedor")
     private Vendedor vendedor;
 
     public ProductosPorVendedor(ProductosPorVendedorDto productosPorVendedorDto) {
