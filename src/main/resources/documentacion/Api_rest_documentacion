@@ -64,5 +64,48 @@ Borrar usuario por id
 DELETE
 -----------------------------------------
 localhost:8080/api/usuarios/borrar/1     //el número es el id del usuario que va a borrar
+-----------------------------------------
+############################################################################################
+Productos
+############################################################################################
+Los vendedores crearán productos
+----------------------------------------
+localhost:8080/api/vendedor/productos/guardar
+-----------------------------------------
+POST (Body)
+-----------------------------------------
+{
+    "id_producto_cliente":0,
+    "productos":{
+        "idProducto":0,
+        "SKU":"abcderftrd",
+        "nombreProducto":"Pan para hot-dog",
+        "descripcionProducto":"Pan de harina",
+        "precio":40.00,
+        "cantidadInventariada":100
+    },
+    "vendedor":{
+            "idVendedor":1
+    }
+}
+-----------------------------------------
+Ver todos los productos
+-----------------------------------------
+GET
+-----------------------------------------
+localhost:8080/api/vendedor/productos/todos
+-----------------------------------------
+Buscar producto por ID
+-----------------------------------------
+GET
+-----------------------------------------
+localhost:8080/api/vendedor/productos/buscar/1     //se coloca el id
+-----------------------------------------
+Borrar producto
+-----------------------------------------
+DELETE
+------------------------------------------
+localhost:8080/api/vendedor/productos/borrar/1     //se coloca el id
+
 
 
