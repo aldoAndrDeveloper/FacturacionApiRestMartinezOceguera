@@ -1,0 +1,44 @@
+Usarios
+
+Hay 2 tipos de usuarios, vendedor y comprador
+Crear usuario:
+POST
+localhost:8080/api/usuarios/guardar
+
+---------------------------------
+JSON Para crear vendedor
+---------------------------------
+{
+    "id":0,
+    "nombre":"Pancho",
+    "apellidos":"Villa",
+    "correo":"micorreo@correo.com",
+    "telefono":"33124234553",
+    "contrasenia":"Abc1234",
+    "edad":31,
+    "vendedor":
+    {
+        "idVendedor":0,
+        "nombreDeTienda":"Mi tienda"
+    },
+    "comprador":null
+}
+
+-----------------------------------
+JSON para crear un comprador
+-----------------------------------
+
+{
+    "id":0,
+    "nombre":"Francisca",
+    "apellidos":"la chona",
+    "correo":"micorreo@correo.com",
+    "telefono":"33124234553",
+    "contrasenia":"Abc1234",
+    "edad":31,
+    "vendedor":null,
+    "comprador":
+    {
+        "idComprador":0  //aquí el id se genera en automático así que no hay problema el numero que se mande
+    }
+}
