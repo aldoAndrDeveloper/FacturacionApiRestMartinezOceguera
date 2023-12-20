@@ -15,6 +15,8 @@ public class CarritoDeCompras {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCarrito;
     private String SKUProducto;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(referencedColumnName = "idComprador")
     private int idusuario;
     private String fecha;
     private int cantidad;
