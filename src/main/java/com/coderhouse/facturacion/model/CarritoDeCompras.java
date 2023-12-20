@@ -1,5 +1,6 @@
 package com.coderhouse.facturacion.model;
 
+import com.coderhouse.facturacion.dto.CarritoDeComprasDto;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,10 +19,11 @@ public class CarritoDeCompras {
     private String fecha;
     private int cantidad;
 
-    public CarritoDeCompras(String SKUProducto, int idusuario, String fecha, int cantidad) {
-        this.SKUProducto = SKUProducto;
-        this.idusuario = idusuario;
-        this.fecha = fecha;
-        this.cantidad = cantidad;
+    public CarritoDeCompras(CarritoDeComprasDto carritoDeComprasDto) {
+        this.idCarrito = carritoDeComprasDto.getIdCarrito();
+        this.SKUProducto = carritoDeComprasDto.getSKUProducto();
+        this.idusuario = carritoDeComprasDto.getIdusuario();
+        this.fecha = carritoDeComprasDto.getFecha();
+        this.cantidad = carritoDeComprasDto.getCantidad();
     }
 }
