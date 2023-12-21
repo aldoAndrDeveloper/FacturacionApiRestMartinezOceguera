@@ -1,9 +1,6 @@
 package com.coderhouse.facturacion.controller;
 
-import com.coderhouse.facturacion.dto.UsuarioDto;
 import com.coderhouse.facturacion.dto.VentasDto;
-import com.coderhouse.facturacion.service.FabricaUsuariosService;
-import com.coderhouse.facturacion.service.UsuariosService;
 import com.coderhouse.facturacion.service.VentasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

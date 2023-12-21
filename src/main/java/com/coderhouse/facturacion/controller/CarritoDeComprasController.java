@@ -17,20 +17,11 @@ public class CarritoDeComprasController {
 
     @PostMapping("/guardar")
     public ResponseEntity<CarritoDeComprasDto> save(@RequestBody CarritoDeComprasDto carritoDeComprasDto) {
-        /*Usamos este método para validar que el formato de fecha sea correcto
-         * Si no lo es se arrojará la excepción que creamos con el mensaje:
-         * "El formato de fecha no es válido, asegurate de ser dd/mm/aaaa"/
-         */
-        //fabricaClienteService.validarFecha(clienteDto.getEdad());
-        //Si no falla entonces se agregará exitosamente el dato en la tabla
         return new ResponseEntity<>( carritoDeComprasService.save(carritoDeComprasDto), HttpStatus.OK);
     }
 
     @GetMapping("/todos")
     public ResponseEntity<List<CarritoDeComprasDto>> findAll(){
-        //Para convertir la fecha de nacimiento a la edad actual haremos lo siguiente
-
-        //1.-Vamos a llamar la lista de clientes
         List<CarritoDeComprasDto> clienteDtoList =  carritoDeComprasService.findAll();
 
         return new ResponseEntity<>(clienteDtoList,HttpStatus.OK);
