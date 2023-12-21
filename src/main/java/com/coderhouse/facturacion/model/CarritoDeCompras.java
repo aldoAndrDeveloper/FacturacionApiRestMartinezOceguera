@@ -20,6 +20,7 @@ public class CarritoDeCompras {
     private int idusuario;
     private String fecha;
     private int cantidad;
+    private boolean comprado;
 
     public CarritoDeCompras(CarritoDeComprasDto carritoDeComprasDto) {
         this.idCarrito = carritoDeComprasDto.getIdCarrito();

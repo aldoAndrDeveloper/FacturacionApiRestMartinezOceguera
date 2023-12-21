@@ -1,5 +1,6 @@
 package com.coderhouse.facturacion.model;
 
+import com.coderhouse.facturacion.dto.VentasDto;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,10 +16,13 @@ public class Ventas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idVenta;
     private String factura;
-/*
-    public Ventas (String SKUProducto, int idUsuario, String fecha, int cantidad, String factura){
-        super(SKUProducto,  idUsuario,  fecha, cantidad);
-        this.factura=factura;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(referencedColumnName = "idCarrito")
+    private int idCarrito;
+
+    public Ventas(VentasDto ventasDto) {
+        this.idVenta = ventasDto.getIdVenta();
+        this.factura = ventasDto.getFactura();
+        this.idCarrito = ventasDto.getIdCarrito();
     }
-*/
 }
