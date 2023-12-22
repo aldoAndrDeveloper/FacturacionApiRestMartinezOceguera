@@ -10,23 +10,27 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="carrito_de_compras")
 public class CarritoDeCompras {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCarrito;
-    private String SKUProducto;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(referencedColumnName = "idComprador")
-    private int idusuario;
+    private String skuproducto;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn( referencedColumnName = "id")
+
+    private Usuarios idusuario;
     private String fecha;
     private int cantidad;
     private boolean comprado;
+    //@OneToOne(fetch = FetchType.EAGER)
+    //@JoinTable( name = "usuarios", joinColumns = @JoinColumn ( name = "id"), inverseJoinColumns = @JoinColumn( name = "idusuario"))
 
     public CarritoDeCompras(CarritoDeComprasDto carritoDeComprasDto) {
-        this.idCarrito = carritoDeComprasDto.getIdCarrito();
-        this.SKUProducto = carritoDeComprasDto.getSKUProducto();
-        this.idusuario = carritoDeComprasDto.getIdusuario();
-        this.fecha = carritoDeComprasDto.getFecha();
-        this.cantidad = carritoDeComprasDto.getCantidad();
+        this.idCarrito   = carritoDeComprasDto.getIdCarrito();
+        this.skuproducto = carritoDeComprasDto.getSkuproducto();
+        this.idusuario   =   carritoDeComprasDto.getIdusuario();
+        this.fecha       = carritoDeComprasDto.getFecha();
+        this.cantidad    = carritoDeComprasDto.getCantidad();
+        this.comprado    = carritoDeComprasDto.isComprado();
     }
 }

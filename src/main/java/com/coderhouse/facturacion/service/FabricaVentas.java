@@ -2,10 +2,11 @@ package com.coderhouse.facturacion.service;
 
 import com.coderhouse.facturacion.dto.VentasDto;
 import com.coderhouse.facturacion.model.Ventas;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class FabricaVentas {
 
 

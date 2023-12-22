@@ -20,7 +20,7 @@ public class Usuarios {
     private String correo;
     private String telefono;
     private String contrasenia;
-    private byte edad;
+    private byte edad = 0;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(referencedColumnName = "idVendedor",nullable = true)
    //@PrimaryKeyJoinColumn

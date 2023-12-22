@@ -13,8 +13,6 @@ import lombok.NoArgsConstructor;
 public class Comprador {
 
 
-    /*Sobrecarga de constructores*/
-    //Contructor por default
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int idComprador;

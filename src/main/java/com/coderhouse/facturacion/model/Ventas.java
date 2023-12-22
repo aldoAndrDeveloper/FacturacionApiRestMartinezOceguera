@@ -1,5 +1,6 @@
 package com.coderhouse.facturacion.model;
 
+import com.coderhouse.facturacion.dto.CarritoDeComprasDto;
 import com.coderhouse.facturacion.dto.VentasDto;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -16,9 +17,9 @@ public class Ventas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idVenta;
     private String factura;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(referencedColumnName = "idCarrito")
-    private int idCarrito;
+    private CarritoDeCompras idCarrito;
 
     public Ventas(VentasDto ventasDto) {
         this.idVenta = ventasDto.getIdVenta();

@@ -43,15 +43,15 @@ public class FlujoDeTienda implements TiendaVirtual{
         try {
             //Vamos a iterar la lista para llenar una nueva con el id del usuario que solicita
             System.out.println("###Ver Carrito de compras###");
-            for (CarritoDeCompras carrito : carritoDeComprasList) {
+          /*  for (CarritoDeCompras carrito : carritoDeComprasList) {
                 if (carrito.getIdusuario() == idUsuario) {
-                    System.out.println("SKU: "+ carrito.getSKUProducto());
+                    System.out.println("SKU: "+ carrito.getSkuproducto());
                     System.out.println("Cantidad: "+ carrito.getCantidad());
                     System.out.println("Fecha "+carrito.getFecha());
 
                     verCarritoDeCompras.add(carrito);
                 }
-            }
+            }*/
         }//IndexOutOfBoundsException si no encuentra el id
         catch (IndexOutOfBoundsException exception) {
             System.out.println("Error de carrito "+ exception.getMessage());
