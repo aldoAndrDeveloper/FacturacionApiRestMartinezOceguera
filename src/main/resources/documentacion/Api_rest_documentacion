@@ -1,5 +1,7 @@
 -----------------------------------------
-Usarios
+###################################
+##########  Usarios ###############
+###################################
 -----------------------------------------
 Hay 2 tipos de usuarios, vendedor y comprador
 -----------------------------------------
@@ -107,5 +109,66 @@ DELETE
 ------------------------------------------
 localhost:8080/api/vendedor/productos/borrar/1     //se coloca el id
 
+####################################################
+######  CARRITO DE COMPRAS Y COMPRAR ###############
+####################################################
+
+-------------------------------------------------------
+Agregar producto al carrito
+-POST
+-localhost:8080/api/carrito/guardar
+BODY:
+
+{
+    "idCarrito":0,
+    "skuproducto":"ABCDEFGHIJ1234567",
+    "idusuario":
+    {
+        "id":3
+    },
+    "fecha":"2023-12-21",
+    "cantidad":10,
+    "comprado":false
+}
+-------------------------------------------------------
+Ver todos los carritos de compras
+GET
+localhost:8080/api/carrito/todos
+-------------------------------------------------------
+Buscar Carrito de compra por id
+GET
+localhost:8080/api/comprador/buscar/{id}      //se coloca el id
+-------------------------------------------------------
+Borar registro por id
+DELETE
+localhost:8080/api/comprador/borrar/{id}     //se coloca el id
+-------------------------------------------------------
+COMPRAR CARRITO
+PUT
+localhost:8080/api/carrito/comprar/{id}       //se coloca el id del carrito
+Esté método PUT actualiza el campo de comprado a true y a la vez manda llamar el metodo de
+api/ventas/guardar para registrar la compra
+--------------------------------------------------------
+
+#########################################################
+#######################  VENTAS #########################
+#########################################################
+---------------------------------------------------------
+Gurdar compra
+POST
+localhost:8080/api/ventas/guardar
+Esta función se manda llamar desde el método PUT de carrito de compras
+---------------------------------------------------------
+Ver todas las ventas
+GET
+localhost:8080/api/vendedor/productos/todos
+---------------------------------------------------------
+Buscar Carrito de compra por id
+GET
+localhost:8080/api/ventas/buscar/{id}      //se coloca el id
+---------------------------------------------------------
+Borar registro por id
+DELETE
+localhost:8080/api/ventas/borrar/{id}     //se coloca el id
 
 
